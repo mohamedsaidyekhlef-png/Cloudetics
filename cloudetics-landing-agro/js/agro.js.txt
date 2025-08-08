@@ -1,0 +1,32 @@
+const agroInput = document.getElementById("agro-input");
+const agroOutput = document.getElementById("agro-output");
+const agroForm = document.getElementById("agro-form");
+
+const API_KEY = "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";
+
+async function talkToAgro(prompt) {
+  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${API_KEY}`
+    },
+    body: JSON.stringify({
+      model: "gpt-4o", // can use "gpt-4" or "gpt-3.5-turbo" for fallback
+      messages: [{ role: "user", content: prompt }]
+    })
+  });
+
+  const data = await response.json();
+  const reply = data.choices?.[0]?.message?.content;
+  agroOutput.innerText = reply || "Hmm... I didn't catch that.";
+}
+
+agroForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const prompt = agroInput.value;
+  if (!prompt.trim()) return;
+  agroOutput.innerText = "Thinking...";
+  await talkToAgro(prompt);
+  agroInput.value = "";
+});

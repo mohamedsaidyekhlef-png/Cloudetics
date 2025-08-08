@@ -7,20 +7,17 @@
   --gray: #f3f4f6;
   --text: #1a1a1a;
 }
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
 body {
   font-family: 'Segoe UI', sans-serif;
   color: var(--text);
   background: var(--gray);
   line-height: 1.6;
 }
-
 .hero {
   background: var(--gradient);
   color: var(--white);
@@ -31,14 +28,12 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-
 .logo {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
 }
-
 .animated-logo {
   font-size: 3.5rem;
   font-weight: bold;
@@ -48,19 +43,16 @@ body {
   -webkit-text-fill-color: transparent;
   animation: gradientMove 6s ease infinite;
 }
-
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
 .heading-rotation {
   min-height: 60px;
   margin-bottom: 20px;
   position: relative;
 }
-
 .fade-heading {
   font-size: 1.8rem;
   opacity: 0;
@@ -70,12 +62,10 @@ body {
   margin: auto;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
-
 .subtext {
   font-size: 1.1rem;
   margin-bottom: 30px;
 }
-
 .cta-button {
   padding: 12px 24px;
   font-size: 1rem;
@@ -88,23 +78,19 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: background 0.3s;
 }
-
 .cta-button:hover {
   background: var(--gray);
 }
-
 .notify-section {
   background: #fff;
   text-align: center;
   padding: 60px 20px;
 }
-
 .notify-section h2 {
   font-size: 2rem;
   color: var(--blue);
   margin-bottom: 10px;
 }
-
 .notify-form {
   display: flex;
   flex-direction: column;
@@ -114,14 +100,12 @@ body {
   max-width: 400px;
   margin-inline: auto;
 }
-
 .notify-form input {
   padding: 10px;
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
-
 .notify-form button {
   padding: 10px 20px;
   background: var(--gradient);
@@ -131,24 +115,75 @@ body {
   border-radius: 6px;
   cursor: pointer;
 }
-
 footer {
   text-align: center;
   padding: 20px;
   background: #f7f7f7;
   font-size: 0.9rem;
 }
-
 @media (max-width: 600px) {
   .animated-logo {
     font-size: 2.4rem;
   }
-
   .fade-heading {
     font-size: 1.3rem;
   }
-
   .hero {
     padding: 40px 15px;
   }
 }
+.agro-chat {
+  padding: 50px 20px;
+  background: #ffffff;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+.agro-chat h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: var(--purple);
+}
+
+.agro-subtext {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.agro-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.agro-form input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.agro-form button {
+  padding: 10px 20px;
+  background: var(--gradient);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.agro-output {
+  padding: 15px;
+  background: #f3f3f3;
+  border-radius: 6px;
+  font-style: italic;
+  color: #333;
+  max-width: 600px;
+  margin: auto;
+}
+
