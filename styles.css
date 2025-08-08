@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #1e1e2f, #000011);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero {
+  padding: 100px 20px 50px;
+}
+
+.animated-gradient {
+  font-size: 4rem;
+  background: linear-gradient(45deg, #1DA1F2, #6f42c1, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% {opacity: 0.8;}
+  50% {opacity: 1;}
+  100% {opacity: 0.8;}
+}
+
+.tagline {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  color: #bbb;
+}
+
+.fade-cycle h2 {
+  display: none;
+  font-size: 1.8rem;
+}
+
+.fade-cycle h2.active {
+  display: block;
+  animation: fadeinout 4s infinite;
+}
+
+@keyframes fadeinout {
+  0% {opacity: 0;}
+  10% {opacity: 1;}
+  90% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.notify-section {
+  background: white;
+  color: #222;
+  padding: 60px 20px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
+.notify-section h2 {
+  font-size: 1.5rem;
+  color: #111;
+}
+
+.notify-section p {
+  margin-bottom: 20px;
+}
+
+#mc_embed_signup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#mc_embed_signup input[type="email"] {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #6f42c1;
+  border-radius: 5px;
+}
+
+#mc_embed_signup input[type="submit"] {
+  padding: 10px;
+  background-color: #6f42c1;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#mc_embed_signup input[type="submit"]:hover {
+  background-color: #1DA1F2;
+}
+
+footer {
+  margin-top: auto;
+  padding: 20px;
+  color: #aaa;
+}
+
+@media (max-width: 600px) {
+  .animated-gradient {
+    font-size: 2.5rem;
+  }
+  .tagline {
+    font-size: 1rem;
+  }
+}
