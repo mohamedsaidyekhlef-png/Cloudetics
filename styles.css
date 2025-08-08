@@ -1,112 +1,154 @@
-body {
+:root {
+  --blue: #4b6cb7;
+  --purple: #6a11cb;
+  --yellow: #facc15;
+  --gradient: linear-gradient(135deg, var(--blue), var(--purple));
+  --white: #ffffff;
+  --gray: #f3f4f6;
+  --text: #1a1a1a;
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #1e1e2f, #000011);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  color: var(--text);
+  background: var(--gray);
+  line-height: 1.6;
 }
 
 .hero {
-  padding: 100px 20px 50px;
+  background: var(--gradient);
+  color: var(--white);
+  text-align: center;
+  padding: 60px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.animated-gradient {
-  font-size: 4rem;
-  background: linear-gradient(45deg, #1DA1F2, #6f42c1, #FFD700);
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.animated-logo {
+  font-size: 3.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, var(--blue), var(--purple), var(--yellow), var(--blue));
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: pulse 3s infinite;
+  animation: gradientMove 6s ease infinite;
 }
 
-@keyframes pulse {
-  0% {opacity: 0.8;}
-  50% {opacity: 1;}
-  100% {opacity: 0.8;}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.tagline {
-  font-size: 1.3rem;
-  margin-bottom: 40px;
-  color: #bbb;
+.heading-rotation {
+  min-height: 60px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
-.fade-cycle h2 {
-  display: none;
+.fade-heading {
   font-size: 1.8rem;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 
-.fade-cycle h2.active {
-  display: block;
-  animation: fadeinout 4s infinite;
+.subtext {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
 }
 
-@keyframes fadeinout {
-  0% {opacity: 0;}
-  10% {opacity: 1;}
-  90% {opacity: 1;}
-  100% {opacity: 0;}
+.cta-button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background: var(--white);
+  color: var(--purple);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background: var(--gray);
 }
 
 .notify-section {
-  background: white;
-  color: #222;
+  background: #fff;
+  text-align: center;
   padding: 60px 20px;
-  width: 100%;
-  max-width: 600px;
-  border-radius: 10px;
-  margin: 20px auto;
 }
 
 .notify-section h2 {
-  font-size: 1.5rem;
-  color: #111;
+  font-size: 2rem;
+  color: var(--blue);
+  margin-bottom: 10px;
 }
 
-.notify-section p {
-  margin-bottom: 20px;
-}
-
-#mc_embed_signup {
+.notify-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  max-width: 400px;
+  margin-inline: auto;
 }
 
-#mc_embed_signup input[type="email"] {
+.notify-form input {
   padding: 10px;
-  font-size: 1rem;
-  border: 2px solid #6f42c1;
-  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
-#mc_embed_signup input[type="submit"] {
-  padding: 10px;
-  background-color: #6f42c1;
+.notify-form button {
+  padding: 10px 20px;
+  background: var(--gradient);
   color: white;
   font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
-#mc_embed_signup input[type="submit"]:hover {
-  background-color: #1DA1F2;
-}
-
 footer {
-  margin-top: auto;
+  text-align: center;
   padding: 20px;
-  color: #aaa;
+  background: #f7f7f7;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 600px) {
-  .animated-gradient {
-    font-size: 2.5rem;
+  .animated-logo {
+    font-size: 2.4rem;
   }
-  .tagline {
-    font-size: 1rem;
+
+  .fade-heading {
+    font-size: 1.3rem;
+  }
+
+  .hero {
+    padding: 40px 15px;
   }
 }
