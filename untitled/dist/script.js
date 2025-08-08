@@ -15,19 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 3000);
 
   showHeading(index);
-
-  const ctaBtn = document.querySelector(".cta-button");
-  const notifySection = document.getElementById("mc_embed_signup");
-
-  if (ctaBtn && notifySection) {
-    ctaBtn.addEventListener("click", () => {
-      notifySection.scrollIntoView({ behavior: "smooth" });
-    });
-  }
-
-  // Footer year
-  const year = document.getElementById("year");
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
 });
+
+const ctaBtn = document.querySelector(".cta-button");
+const notifySection = document.getElementById("mc_embed_signup");
+
+if (ctaBtn && notifySection) {
+  ctaBtn.addEventListener("click", () => {
+    notifySection.scrollIntoView({ behavior: "smooth" });
+  });
+}
